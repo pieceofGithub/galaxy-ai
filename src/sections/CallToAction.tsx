@@ -28,14 +28,14 @@ const useRelativeMousePosition = (to: RefObject<HTMLElement>) => {
     return () => {
       window.removeEventListener("mousemove", updateMousePosition);
     };
-  }, []);
+  }, [updateMousePosition]);
 
   return [mouseX, mouseY];
 };
 
 export const CallToAction = () => {
   const sectionRef = useRef<HTMLElement>(null);
-  const borderedDivRef = useRef<HTMLElement>(null);
+  const borderedDivRef = useRef<HTMLDivElement>(null);
 
   const { scrollYProgress } = useScroll({
     offset: ["start end", "end start"],
